@@ -1,0 +1,5 @@
+node_modules/
+dist/
+data/admin.json
+.env
+*.log
