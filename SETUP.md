@@ -15,8 +15,9 @@
 ## Installation
 
 1. **Download or clone the project**
-   - If you have git: `git clone <repo-url> minecraft-panel`
-   - Or download and extract the zip file
+   ```
+   git clone https://github.com/DALI951/minecraft-panel.git minecraft-panel
+   ```
 
 2. **Open a terminal in the project folder**
    ```
@@ -150,3 +151,34 @@ The panel needs to stay running. Use one of these methods:
 - Change `JWT_SECRET` to a long random string
 - This panel is designed to run on the same machine as your Minecraft server
 - Do not expose port 3000 to the public internet without adding HTTPS (use nginx or caddy as reverse proxy)
+
+## How to Update the Panel (for Dali)
+
+If Dali needs to update the frontend design or code:
+
+1. **SSH into the server**
+   ```
+   ssh your-username@your-server-ip
+   ```
+
+2. **Go to the panel directory**
+   ```
+   cd /path/to/minecraft-panel
+   ```
+
+3. **Pull latest changes**
+   ```
+   git pull origin master
+   ```
+
+4. **Rebuild frontend**
+   ```
+   cd client && npm install && npm run build
+   ```
+
+5. **Restart panel**
+   ```
+   pm2 restart minecraft-panel
+   ```
+
+That's it. The owner doesn't need to do anything — Dali handles updates directly.
